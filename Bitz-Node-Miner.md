@@ -55,7 +55,7 @@ source $HOME/.bashrc
 ```
 solana --version
 ```
-If you get Solana: command not found RUN
+If you get Solana: command not found RUN (WSL for Local PC)
 ```
 echo 'export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
