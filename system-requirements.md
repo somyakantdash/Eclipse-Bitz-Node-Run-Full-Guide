@@ -2,8 +2,8 @@
 
 Official Docs: still searching...........
 
-- 4GB RAM and 2 Cores
-- 20GB free disk space
+- 1GB RAM and 2 Cores
+- 10GB free disk space
 
 # Software Requirements
 
