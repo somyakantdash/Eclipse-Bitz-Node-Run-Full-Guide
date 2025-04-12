@@ -79,14 +79,6 @@ reboot
 solana config set --url https://mainnetbeta-rpc.eclipse.xyz/
 ```
 
-For VPS Only
-```
-apt install screen -y
-```
-```
-screen -S rlswarm
-```
-
 5️⃣ Wallet Setup (Solana Keypair)
 ```
 solana-keygen new
