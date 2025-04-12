@@ -2,51 +2,65 @@
 
 ### Offical Docs Guide - still searching..................
 
+----
+
+## 🧰 Prerequisites
+### Before getting started, make sure you have the following:
+	
+ * A Backpack wallet (or another Eclipse-compatible wallet) [Download](https://chromewebstore.google.com/detail/backpack/aflkmfhebedbjioipglgcbcmnbpgliof)
+ * 0.005+ ETH on the Eclipse network
+---
+
 1️⃣ Dependencies for WINDOWS & LINUX & VPS & Mac
 
 For WSL or VPS
 ```
 sudo apt update && sudo apt upgrade -y
-```
-```
-sudo apt install -y curl git wget nano tmux htop nvme-cli lz4 jq make gcc clang build-essential autoconf automake pkg-config libssl-dev libleveldb-dev libgbm1 bsdmainutils ncdu unzip tar
+sudo apt install curl nano build-essential -y
 ```
 For Mac
 ```
-brew install git curl wget nano tmux htop jq make gcc autoconf automake pkg-config openssl leveldb lz4 coreutils
+
 ```
 
-2️⃣ Install Python & Node Js & Yarn & NPM & Pip & Dev. tool
+2️⃣ Install Rust & Node Js & Yarn & NPM & Pip & Dev. tool
 
 For WSL or VPS
 ```
-sudo apt-get install python3 python3-pip python3-venv python3-dev -y
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustc --version
 ```
+- Just Press Enter to Proceed it
 ```
 sudo apt-get update && curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - && sudo apt-get install -y nodejs && node -v && npm -v && sudo npm install -g yarn && yarn -v
 ```
-```
-sudo apt install -y python3 && sudo apt install -y python3-pip && python3 --version && pip3 --version
-```
-```
-sudo apt install python3-dev python3-venv build-essential -y
-```
-```
-sudo apt-get update && sudo apt-get install -y curl gnupg apt-transport-https && curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt-get update && sudo apt-get install -y yarn && yarn --version
-```
+
 For Mac
 ```
-brew install python3 node yarn
+
 ```
 
-3️⃣ Hugging Face Access Token (Optional)
-
-- Not Needed
-
-4️⃣ Download Some Files
+3️⃣ Install Solana CLI
 ```
-git clone https://github.com/gensyn-ai/rl-swarm/
-cd rl-swarm
+curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev | bash
+```
+```
+source $HOME/.bashrc
+```
+```
+solana --version
+```
+
+For VPS Only
+- If using VPS, and Solana not found, REBOOT it
+```
+reboot
+```
+
+4️⃣ Configue RPC for Eclipse
+```
+solana config set --url https://mainnetbeta-rpc.eclipse.xyz/
 ```
 
 For VPS Only
@@ -57,13 +71,51 @@ apt install screen -y
 screen -S rlswarm
 ```
 
-5️⃣ Install and Run RL Swarm
+5️⃣ Wallet Setup (Solana Keypair)
 ```
-python3 -m venv .venv
-source .venv/bin/activate
-./run_rl_swarm.sh
+solana-keygen new
 ```
-Put answer 'Y' (just press enter)
+Press ENTER and save the passphrase
+
+6️⃣ Exporting Private Key from ID.json
+```
+cat ~/.config/solana/id.json
+```
+* Copy the output (a list of numbers) and import it into Backpack Wallet under “Private Key”.
+* Fund the wallet with 0.005+ ETH on Eclipse to activate mining.
+
+7️⃣ Install Bitz CLI
+```
+cargo install bitz
+```
+
+For VPS Only
+```
+apt install screen -y
+```
+```
+screen -S bitz
+```
+
+8️⃣ 🅰️ Start Miner
+```
+bitz collect
+```
+
+OR
+
+8️⃣ 🅱️ Start Miner (using multiple core) 
+```
+bitz collect --cores 4
+```
+
+For VPS Only
+- PRESS CTRL+A+D (to run ur miner continuously)
+- To check ur Node Again
+```
+screen -r bitz
+```
+
 
 Wait till you see waiting for UserData.json to be created
 
