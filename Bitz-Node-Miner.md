@@ -136,5 +136,5 @@ bitz collect
 
 ## Delete Node File
 ```
-rm -rf ~/rl-swarm
+
 ```
