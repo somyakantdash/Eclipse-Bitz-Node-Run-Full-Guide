@@ -23,7 +23,7 @@ For Mac
 
 ```
 
-2️⃣ Install Rust & Node Js & Yarn & NPM & Pip & Dev. tool
+2️⃣ Install Rust & Node Js & Yarn
 
 For WSL or VPS
 ```
@@ -38,10 +38,12 @@ sudo apt-get update && curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -
 
 For Mac
 ```
-
+brew install curl node yarn rust
 ```
 
 3️⃣ Install Solana CLI
+
+For WSL or VPS
 ```
 curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev | bash
 ```
@@ -49,6 +51,20 @@ curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev 
 source $HOME/.bashrc
 ```
 ```
+solana --version
+```
+If you get Solana: command not found RUN
+```
+echo 'export PATH="/root/.local/share/solana/install/active_release/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+For Mac
+```
+sh -c "$(curl -sSfL https://solana-install.solana.workers.dev)"
+```
+```
+source $HOME/.bash_profile
 solana --version
 ```
 
@@ -77,12 +93,57 @@ solana-keygen new
 ```
 Press ENTER and save the passphrase
 
-6️⃣ Exporting Private Key from ID.json
+6️⃣ 🅰️ Exporting Private Key from ID.json
 ```
 cat ~/.config/solana/id.json
 ```
 * Copy the output (a list of numbers) and import it into Backpack Wallet under “Private Key”.
 * Fund the wallet with 0.005+ ETH on Eclipse to activate mining.
+
+OR
+
+6️⃣ 🅱️ Save Your ID.json File
+
+1️) Save your `ID.json` file to your Local Device from VPS (Open Command Prompt or Powershell)
+- From VPS to WSL Home Directory
+```
+scp USERNAME@<YOUR_IP>:~/.config/solana/id.json ~/solana_id.json
+```
+- From VPS to Desktop Screen Windows (username has no spaces)
+```
+scp USERNAME@YOUR_IP:~/.config/solana/id.json C:\Users\YourUsername\Desktop\
+```
+- From VPS to Desktop Screen Windows (username has spaces)
+```
+scp USERNAME@YOUR_IP:~/.config/solana/id.json "C:\Users\Your Username\Desktop\"
+```
+Replace ur "USERNAME" & "YOUR_IP" with your actual VPS Username & IP u got already. Replace YourUsername or Your Username with your actual Windows username
+
+2️) Save your `ID.json` file to your Desktop screen on your PC from WSL (Open WSL)
+- username has no spaces
+```
+cp ~/.config/solana/id.json /mnt/c/Users/YourUsername/Desktop/solana_id.json
+```
+OR
+```
+cp ~/.config/solana/id.json /mnt/c/Users/YourUsername/Desktop/
+```
+- username has spaces
+```
+cp ~/.config/solana/id.json "/mnt/c/Users/YourUsername/Desktop/solana_id.json"
+```
+Replace YourUsername or Your Username with your actual Windows username
+
+3️) To check your Windows username
+- Through Command Prompt or Powershell
+```
+echo %USERNAME%
+```
+
+4️) Save your `ID.json` file to your Desktop screen on your Mac from HomeBrew
+```
+cp ~/.config/solana/id.json ~/Desktop/solana_id.json
+```
 
 7️⃣ Install Bitz CLI
 ```
@@ -136,5 +197,5 @@ bitz collect
 
 ## Delete Node File
 ```
-
+rm -rf ~/.config/solana
 ```
