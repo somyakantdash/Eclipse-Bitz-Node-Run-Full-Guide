@@ -20,7 +20,7 @@ sudo apt install curl nano build-essential -y
 ```
 For Mac
 ```
-
+brew install git curl wget nano tmux htop jq make gcc autoconf automake pkg-config openssl leveldb lz4 coreutils
 ```
 
 2️⃣ Install Rust & Node Js & Yarn
