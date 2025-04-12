@@ -51,6 +51,7 @@ curl --proto '=https' --tlsv1.2 -sSfL https://solana-install.solana.workers.dev 
 ```
 source $HOME/.bashrc
 ```
+- Close and Reopen your Terminal > Then Directly Paste Below Command (open again wsl)
 ```
 solana --version
 ```
