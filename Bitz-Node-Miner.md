@@ -123,7 +123,7 @@ bitz collect --cores 4
 
 ### How to check your own CPU Cores (Open Command Prompt or PowerShell)
 
-![Screenshot 2025-04-13 090641](https://github.com/user-attachments/assets/5d68323a-24f2-4cfe-8cdc-ca5ae30ba029)
+![Screenshot 2025-04-13 092300](https://github.com/user-attachments/assets/5e62ff45-c231-4eed-81aa-130b9bf84f2c)
 
 ```
 wmic cpu get NumberOfCores,NumberOfLogicalProcessors
