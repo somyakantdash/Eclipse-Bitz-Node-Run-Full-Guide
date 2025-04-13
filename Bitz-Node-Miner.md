@@ -123,10 +123,10 @@ bitz collect --cores 4
 
 ### How to check your own CPU Cores (Open Command Prompt or PowerShell)
 
-![Screenshot 2025-04-13 092300](https://github.com/user-attachments/assets/5e62ff45-c231-4eed-81aa-130b9bf84f2c)
+![Screenshot 2025-04-13 092609](https://github.com/user-attachments/assets/457621f4-af6f-48c8-91df-ad38e80f20d3)
 
 ```
-wmic cpu get NumberOfCores,NumberOfLogicalProcessors
+wmic cpu get NumberOfCores
 ```
 
 For VPS Only
