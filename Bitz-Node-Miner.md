@@ -165,6 +165,9 @@ solana config get
 ```
 sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
 ```
+```
+cargo install bitz --force
+```
 - For VPS open ur Screen and Run Start Miner Command
 - For Local PC Directly Run Start Miner Command
 
