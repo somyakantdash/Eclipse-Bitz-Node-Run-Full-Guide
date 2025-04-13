@@ -121,6 +121,11 @@ OR
 bitz collect --cores 4
 ```
 
+### How to check your own CPU Cores (Open Command Prompt or PowerShell)
+```
+wmic cpu get NumberOfCores,NumberOfLogicalProcessors
+```
+
 For VPS Only
 - PRESS CTRL+A+D (to run ur miner continuously)
 - To check ur Node Again
