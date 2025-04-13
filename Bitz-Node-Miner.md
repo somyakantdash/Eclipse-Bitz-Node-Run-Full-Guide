@@ -150,3 +150,21 @@ bitz collect
 ```
 rm -rf ~/.config/solana
 ```
+
+## If You Facing Auto Crashed Error (Core Dumped error)
+
+![Screenshot 2025-04-13 090641](https://github.com/user-attachments/assets/769ece51-a79f-46cc-8613-e20bc0364705)
+
+Put One by One Command & Run it
+```
+RUST_BACKTRACE=1 ./bitz
+```
+```
+solana config get
+```
+```
+sh -c "$(curl -sSfL https://release.solana.com/stable/install)"
+```
+- For VPS open ur Screen and Run Start Miner Command
+- For Local PC Directly Run Start Miner Command
+
