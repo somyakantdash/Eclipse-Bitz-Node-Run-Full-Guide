@@ -80,11 +80,13 @@ reboot
 ```
 solana config set --url https://mainnetbeta-rpc.eclipse.xyz/
 ```
-IF you are getting Error on this RPC you can use other RPC 
-here are the links 
-https://eclipse.helius-rpc.com
-
-https://eclipse.lgns.net
+IF you are getting Error on this RPC you can use other RPC
+```
+solana config set --url https://eclipse.helius-rpc.com
+```
+```
+solana config set --url https://eclipse.lgns.net
+```
 
 5️⃣ Wallet Setup (Solana Keypair)
 ```
